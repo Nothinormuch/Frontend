@@ -1,0 +1,143 @@
+* {
+    margin-inline: 0;
+    margin-block: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: aquamarine; */
+    background-image: linear-gradient(to bottom, aquamarine, white);
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+}
+
+@media screen and (min-width: 1020px) {
+    .navbar .ham-container {
+        display: none;
+    }
+
+    .navbar .links-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .navbar .links-container {
+        display: none;
+    }
+    
+    .navbar .ham-container {
+        display: block;
+    }
+}
+
+.navbar .logo-container img{
+        height: 3rem;
+}
+
+.navbar .ham-container .box {
+    border: 2px solid black;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.2rem;
+    background-color: white;
+}
+
+.navbar .ham-container .line {
+    border: 1px solid black;
+    width: 1.2rem;
+}
+
+.navbar .links-container ul{
+    list-style: none;
+    display: flex;
+}
+
+.navbar .links-container ul a{
+    text-decoration: none;
+    color: black;
+    margin-inline-start: 1rem;
+    font-size: 1.5rem;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+@media screen and (max-width: 1425px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero .img-container{
+        margin-block-start: 0rem;
+        margin-block-end: 5rem;
+    }
+}
+
+@media screen and (min-width: 1425px) {
+    .hero .img-container {
+        margin-block: 5rem;
+        margin-inline: 5rem;
+    }   
+}
+
+.hero .text-container {
+    margin-block: 5rem;
+    margin-inline: 5rem;
+    padding-block: 0.5rem;
+
+}
+
+.hero .text-container .Heading1 {
+    font-size: 6rem;
+    margin-block-end: 1rem;
+}
+
+.hero .text-container .Heading2 {
+    font-size: 2.5rem;
+    margin-block-end: 2rem;
+}
+
+.hero .text-container .text {
+    font-size: 1.5rem;
+    display: inline;
+    margin-inline: 1rem;
+}
+
+.hero .img-container img {
+    border-radius: 2rem;
+}
+
+footer {
+    text-align: center;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    padding-block: 1.5rem;
+    font-size: 1.5rem;
+}

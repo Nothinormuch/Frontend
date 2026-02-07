@@ -1,122 +1,11 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
     <title>SimpleWebPage</title>
+    <link rel="stylesheet" href="./style.css">
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        .icon {
-            max-width: 2rem;
-            max-height: 2rem;
-        }
-
-        .logo {
-            max-width: 5rem;
-        }
-
-        .pfp {
-            max-height: 8rem;
-        }
-
-        footer {
-            position: sticky;
-            bottom: 0;
-            background-color: white;
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid black;
-            text-align: center;
-            align-items: center;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-
-        #logo-box {
-            text-align: left;
-        }
-
-        td,
-        th {
-            padding: 0.5rem;
-        }
-
-        #contact {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #contact #social {
-            text-align: right;
-        }
-
-        header {
-            position: sticky;
-            background-color: rgba(255, 255, 255, 0.8);
-            top: 0;
-            padding: 1rem;
-            border: 1px solid black;
-        }
-
-        header ul {
-            display: flex;
-            list-style: none;
-            justify-content: space-between;
-        }
-
-        header ul li a {
-            color: black;
-            text-decoration: none;
-        }
-
-        section {
-            margin-block: 4rem;
-            margin-inline: 2rem;
-        }
-
-        video {
-            width: 16rem;
-            height: 9rem;
-        }
-
-        .japanese-text {
-            writing-mode: vertical-rl;
-        }
-
-        .japanese-list li {
-            display: inline-block;
-            writing-mode: vertical-rl;
-        }
-
-        h1 {
-            margin-block: 1rem;
-        }
-
-        h2 {
-            margin-block: 0.75rem;
-        }
-
-        h3 {
-            margin-block: 0.5rem;
-        }
-
-        #about-me-heading {
-            display: inline;
-        }
-
-        /* canvas {
-                width: 16rem;
-                height: 9rem;
-            } */
     </style>
 </head>
 
@@ -124,7 +13,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li id="nav-logo"><a href="#">Home</a></li>
                 <li><a href="#ID">ID Card</a></li>
                 <li><a href="#survey">Survey</a></li>
                 <li><a href="#media">Media</a></li>
@@ -134,44 +23,44 @@
             </ul>
         </nav>
     </header>
-    <section id="home">
-        <h1>Simple Webpage</h1>
-        <blockquote
-            cite="https://www.reddit.com/r/quotes/comments/1lqgxr9/an_apple_a_day_keeps_anyone_away_if_you_throw_it/#:~:text=Electrical_Mine-,%E2%80%9CAn%20apple%20a%20day%20keeps%20anyone%20away%20if%20you%20throw,hard%20enough.%E2%80%9D%20%2D%20Stephen%20Colbert">
-            “An apple a day keeps anyone away if you throw it hard enough. - Stephen Colbert”</blockquote>
-    </section>
-    <hr>
-    <section id="ID">
-        <h2>ID Card</h2>
-        <table>
-            <tr>
-                <th colspan="3" id="logo-box"><img src="../Media/upeslogo.png" alt="upes logo" class="logo"></th>
-            </tr>
-            <tr>
-                <td rowspan="3"><img src="../Media/pfp.png" alt="Profile Picture" class="pfp"></td>
-                <td><b>NAME</b></td>
-                <td>Nikhil Sharam</td>
-            </tr>
-            <tr>
-                <td><b>SCHOOL</b></td>
-                <td>School of Computer Science</td>
-            </tr>
-            <tr>
-                <td><b>PROGRAM</b></td>
-                <td>B.Tech(CSE)</td>
-            </tr>
-            <tr>
-                <td><b>590012509</b></td>
-                <td><b>BATCH</b></td>
-                <td>2024-28</td>
-            </tr>
-        </table>
+    <section id="banner">
+        <section id="heading">
+            <h1>Simple Webpage</h1>
+            <blockquote
+                cite="https://www.reddit.com/r/quotes/comments/1lqgxr9/an_apple_a_day_keeps_anyone_away_if_you_throw_it/#:~:text=Electrical_Mine-,%E2%80%9CAn%20apple%20a%20day%20keeps%20anyone%20away%20if%20you%20throw,hard%20enough.%E2%80%9D%20%2D%20Stephen%20Colbert">
+                “An apple a day keeps anyone away if you throw it hard enough. - Stephen Colbert”</blockquote>
+        </section>
+        <section id="profile">
+            <table>
+                <tr>
+                    <th colspan="3" id="logo-box"><img src="../Media/upeslogo.png" alt="upes logo" class="logo"></th>
+                </tr>
+                <tr>
+                    <td rowspan="3"><img src="../Media/pfp.png" alt="Profile Picture" class="pfp"></td>
+                    <td><b>NAME</b></td>
+                    <td>Nikhil Sharam</td>
+                </tr>
+                <tr>
+                    <td><b>SCHOOL</b></td>
+                    <td>School of Computer Science</td>
+                </tr>
+                <tr>
+                    <td><b>PROGRAM</b></td>
+                    <td>B.Tech(CSE)</td>
+                </tr>
+                <tr>
+                    <td><b>590012509</b></td>
+                    <td><b>BATCH</b></td>
+                    <td>2024-28</td>
+                </tr>
+            </table>
+        </section>
     </section>
     <hr>
     <section id="survey">
         <h2>Survey</h2>
         <form action="#">
-            <fieldset>
+            <fieldset id="desc">
                 <legend>Your Description</legend>
                 <label for="first-name">First Name: </label>
                 <input type="text" id="first-name" placeholder="Enter your first name">
@@ -179,7 +68,7 @@
                 <input type="text" id="last-name" placeholder="Enter your last name">
                 <br>
                 <label for="DOB">Date of Birth: </label>
-                <input type="date" id="DOB" placeholder="DOB" required>
+                <input type="date" id="DOB" required>
                 <br>
                 <label for="email">Email Address: </label>
                 <input type="email" id="email" placeholder="email">
@@ -187,12 +76,12 @@
                 <label for="salary">Salary: </label>
                 <input type="number" id="salary" placeholder="salary">
                 <br>
-                <label for="phone">Phone</label>
+                <label for="phone">Phone: </label>
                 <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="Phone Number">
             </fieldset>
-            <fieldset>
+            <fieldset id="pref">
                 <legend>Your Preference</legend>
-                <label for="activity-freq">How often do you play sports?</label>
+                <label>How often do you play sports?</label>
                 <br>
                 <input type="checkbox" name="activity-freq" id="activity-freq-daily" value="daily">
                 <label for="activity-freq-daily">Daily</label>
@@ -205,16 +94,16 @@
                 <br>
                 <label for="mindset">Your strategy while playing:</label>
                 <br>
-                <textarea id="mindset" rows="5" cols="50"></textarea>
+                <textarea id="mindset"></textarea>
             </fieldset>
-            <fieldset>
+            <fieldset id="rate">
                 <legend>Rating</legend>
                 <label for="mood">How is your mood right now:</label>
                 <select name="mood" id="mood">
-                    <optgroup label="Basic">Basic</optgroup>
+                  <optgroup label="Basic"><legend>Basic</legend></optgroup>
                     <option value="happy">Happy</option>
                     <option value="sad">Sad</option>
-                    <optgroup label="Peak">Peak</optgroup>
+                    <optgroup label="Peak"><legend>Peak</legend></optgroup>
                     <option value="motivated">Motivated</option>
                     <option value="depressed">Depressed</option>
                 </select>
@@ -222,38 +111,52 @@
                 <label for="color">Your favourite color:</label>
                 <input type="color" id="color">
             </fieldset>
-            <input type="submit" value="submit">
+            <input id="submit-button" type="submit" value="submit">
         </form>
     </section>
     <hr>
+    <h2 style="margin-block-start: 2rem;">Good Vibes</h2>
     <section id="media">
-        <h2>Multimedia</h2>
-        <h3>Background Music: </h3>
-        <audio controls src="../Media/bg-music.mp3">
-            This browser might not support audio
-        </audio>
-        <h3>Costa Rica: </h3>
-        <video controls src="../Media/CostaRica.mp4"></video>
-        <!-- <h2>White Board</h2>About me<
-            <canvas id="whitboard"></canvas> -->
-        <h2>PDF</h2>
-        <h3>iframe:</h3>
-        <iframe src="../Media/cube-algo.pdf" frameborder="0"></iframe>
-        <h3>embed:</h3>
-        <embed src="../Media/cube-algo.pdf" type="application/pdf">
-        <h3>object:</h3>
-        <object data="../Media/cube-algo.pdf" type="application/pdf"></object>
-        <h3>How to use iframe:</h3>
-        <iframe src="https://elementor.com/blog/what-is-an-iframe/" frameborder="3"></iframe>
-        <h3>Code:</h3>
-        <pre>
+        <div>
+            <h3>Costa Rica: </h3>
+            <video controls src="../Media/CostaRica.mp4"></video>
+        </div>
+        <div>
+            <h3>Background Music: </h3>
+            <audio controls src="../Media/bg-music.mp3">
+                This browser might not support audio
+            </audio>
+        </div>
+    </section>
+    <h2 style="margin-block-start: 3rem;">PDF</h2>
+    <section id="pdf">
+        <div>
+            <h3>iframe:</h3>
+            <iframe src="../Media/cube-algo.pdf"></iframe>
+        </div>
+        <div>
+            <h3>embed:</h3>
+            <embed src="../Media/cube-algo.pdf" type="application/pdf">
+        </div>
+        <div>
+            <h3>object:</h3>
+            <object data="../Media/cube-algo.pdf" type="application/pdf"></object>
+        </div>
+    </section>
+        <div>
+            <h3>How to use iframe:</h3>
+            <iframe src="https://elementor.com/blog/what-is-an-iframe/"></iframe>
+        </div>
+        <div>
+            <h3>Code:</h3>
+            <pre>
 public class main{
     public static void main(String []args){
         System.out.println("Hello World!");
     }
 }
-        </pre>
-    </section>
+            </pre>
+        </div>
     <hr>
     <section id="anime">
         <h2>Top Anime:</h2>
