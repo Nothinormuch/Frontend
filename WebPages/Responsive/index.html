@@ -7,24 +7,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="navbar">
-      <div class="logo-container">
-        <img src="../../Media/logo.png" alt="Logo" />
-      </div>
-      <div class="links-container">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#Contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="ham-container">
-        <div class="box">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+    <header>
+      <div class="navbar">
+        <div class="logo-container">
+          <img src="../../Media/logo.png" alt="Logo" />
         </div>
+        <div class="links-container">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+        </div>
+        <input
+          type="checkbox"
+          name="ham-checkbox"
+          id="ham-checkbox"
+          class="ham-checkbox"
+        />
+        <label for="ham-checkbox" class="ham-checkbox-label">
+          <div class="ham-container">
+            <div class="box">
+              <div class="line" id="line1"></div>
+              <div class="line" id="line2"></div>
+              <div class="line" id="line3"></div>
+            </div>
+          </div>
+        </label>
+      </div>
+      <div class="navmenu">
+        <a href="#about"><div><p>About</p></div></a>
+        <a href="#skills"><div><p>Skills</p></div></a>
+        <a href="#services"><div><p>Services</p></div></a>
+        <a href="#Contact"><div><p>Contact</p></div></a>
       </div>
     </header>
     <section class="hero">
@@ -40,7 +56,7 @@
         </div>
       </div>
       <div class="img-container">
-        <img src="../../Media/pfp.png" alt="A picture of my face">
+        <img src="../../Media/pfp.png" alt="A picture of my face" />
       </div>
     </section>
     <footer>

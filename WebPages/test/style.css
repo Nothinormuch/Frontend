@@ -1,0 +1,11 @@
+/* The default state */
+.content {
+  background-color: white;
+  transition: background 0.3s ease;
+}
+
+/* The magic: when the checkbox is checked, target the sibling .content */
+#toggle:checked ~ .content {
+  background-color: #333;
+  color: white;
+}

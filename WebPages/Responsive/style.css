@@ -4,14 +4,19 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+}
+
 body {
-    /* background-color: aquamarine; */
-    background-image: linear-gradient(to bottom, aquamarine, white);
+    background-image: linear-gradient(to bottom, skyblue, white);
+    width: 100%;
 }
 
 header {
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
+    width: 100%;
 }
 
 .navbar {
@@ -23,15 +28,12 @@ header {
     padding-block: 0.5rem;
     background-color: white;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    width: 100%;
 }
 
 @media screen and (min-width: 1020px) {
-    .navbar .ham-container {
+    .navbar .ham-container, .navbar .ham-checkbox-label {
         display: none;
-    }
-
-    .navbar .links-container {
-        display: block;
     }
 }
 
@@ -39,14 +41,30 @@ header {
     .navbar .links-container {
         display: none;
     }
-    
-    .navbar .ham-container {
-        display: block;
-    }
 }
 
 .navbar .logo-container img{
         height: 3rem;
+}
+
+.navbar #ham-checkbox {
+    display: none;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box .line {
+    position: absolute;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line2{
+    display:none;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line1{
+    transform: rotate(-45deg);
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line3{
+    transform: rotate(45deg);
 }
 
 .navbar .ham-container .box {
@@ -61,7 +79,7 @@ header {
     background-color: white;
 }
 
-.navbar .ham-container .line {
+.navbar .ham-container .box .line {
     border: 1px solid black;
     width: 1.2rem;
 }
@@ -78,6 +96,32 @@ header {
     font-size: 1.5rem;
 }
 
+.navmenu {
+    display: none;
+}
+
+header:has(#ham-checkbox:checked) .navmenu {
+    display: block;
+}
+
+header:has(#ham-checkbox:checked) .navmenu a:nth-child(even) div {
+    background-color: rgba(242,242,242,0.8);
+}
+
+header:has(#ham-checkbox:checked) .navmenu a:nth-child(odd) div {
+    background-color: rgba(221,221,221,0.8);
+}
+
+header:has(#ham-checkbox:checked) .navmenu div {
+    padding: 1rem;
+}
+
+header:has(#ham-checkbox:checked) .navmenu a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
 .hero {
     display: flex;
     justify-content: space-between;
@@ -89,9 +133,31 @@ header {
         flex-direction: column;
         text-align: center;
     }
-    .hero .img-container{
+
+    .hero .text-container .Heading1 {
+        font-size: 10vw;
+    }
+    .hero .text-container .Heading2 {
+        font-size: 3vw;
+    }
+    .hero .text-container .text {
+        font-size: 2.2vw;
+        margin-block-end: 0.5rem;
+    }
+
+    .hero .text-container {
+        margin-block: 2rem;
+        margin-inline: 5rem;
+    }
+
+    .hero .img-container {
         margin-block-start: 0rem;
         margin-block-end: 5rem;
+    }
+
+    .hero .img-container img {
+        width: 80%;
+        height: auto;
     }
 }
 
@@ -99,30 +165,34 @@ header {
     .hero .img-container {
         margin-block: 5rem;
         margin-inline: 5rem;
-    }   
-}
+    }
 
-.hero .text-container {
-    margin-block: 5rem;
-    margin-inline: 5rem;
-    padding-block: 0.5rem;
+    .hero .text-container {
+        margin-block: 5rem;
+        margin-inline: 5rem;
+        padding-block: 0.5rem;
+    }
 
+    .hero .text-container .Heading1 {
+        font-size: 6rem;
+    }
+    .hero .text-container .Heading2 {
+        font-size: 2.5rem;
+    }
+    .hero .text-container .text {
+        font-size: 1.5rem;
+        display: inline;
+        margin-inline: 1rem;
+    }
 }
 
 .hero .text-container .Heading1 {
-    font-size: 6rem;
     margin-block-end: 1rem;
+    font-weight: bold;
 }
 
 .hero .text-container .Heading2 {
-    font-size: 2.5rem;
     margin-block-end: 2rem;
-}
-
-.hero .text-container .text {
-    font-size: 1.5rem;
-    display: inline;
-    margin-inline: 1rem;
 }
 
 .hero .img-container img {
