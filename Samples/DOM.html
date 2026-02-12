@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <div class="parent">
+      <p>This is the first paragraph</p>
+      <p>And this is the second paragraph</p>
+    </div>
+  </body>
+  <script>
+    let ps = document.querySelectorAll(".parent>p");
+    for (let i = 0; i < ps.length; i++) {
+      ps[i].style.backgroundColor = "Blue";
+      ps[i].style.fontSize = "1.5rem";
+      ps[i].style.color = "White";
+      ps[i].style.fontFamily = "Times New Roman";
+      ps[i].style.fontWeight = "Bold";
+    }
+  </script>
+</html>

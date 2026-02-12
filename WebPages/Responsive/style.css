@@ -56,15 +56,18 @@ header {
 }
 
 .navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line2{
-    display:none;
+    width: 0;
+    transition: width 0.1s;
 }
 
 .navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line1{
     transform: rotate(-45deg);
+    transition: transform 0.2s;
 }
 
 .navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line3{
     transform: rotate(45deg);
+    transition: transform 0.2s;
 }
 
 .navbar .ham-container .box {
@@ -82,6 +85,11 @@ header {
 .navbar .ham-container .box .line {
     border: 1px solid black;
     width: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.navbar .ham-container .box #line2 {
+    transition: width 0.2s;
 }
 
 .navbar .links-container ul{
@@ -98,6 +106,12 @@ header {
 
 .navmenu {
     display: none;
+    z-index: 100;
+}
+
+.navmenu div {
+    display: none;
+    z-index: 10;
 }
 
 header:has(#ham-checkbox:checked) .navmenu {
@@ -112,8 +126,23 @@ header:has(#ham-checkbox:checked) .navmenu a:nth-child(odd) div {
     background-color: rgba(221,221,221,0.8);
 }
 
+@keyframes slideDown {
+    from {
+        padding-block: 0px;
+        height: 0px;
+        font-size: 0px;
+    }
+    to {
+        padding-block: 1rem;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+}
+
 header:has(#ham-checkbox:checked) .navmenu div {
     padding: 1rem;
+    display: block;
+    animation: slideDown 0.15s;
 }
 
 header:has(#ham-checkbox:checked) .navmenu a{
