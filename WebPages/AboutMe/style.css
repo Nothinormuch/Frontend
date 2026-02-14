@@ -142,7 +142,7 @@ header:has(#ham-checkbox:checked) .navmenu a:nth-child(odd) div {
 header:has(#ham-checkbox:checked) .navmenu div {
     padding: 1rem;
     display: block;
-    animation: slideDown 0.15s;
+    animation: slideDown 0.5s;
 }
 
 header:has(#ham-checkbox:checked) .navmenu a{

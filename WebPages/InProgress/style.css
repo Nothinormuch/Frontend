@@ -1,0 +1,248 @@
+* {
+    margin-inline: 0;
+    margin-block: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    opacity: 0.5;
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    width: 100%;
+}
+
+@media screen and (min-width: 1020px) {
+    .navbar .ham-container, .navbar .ham-checkbox-label {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .navbar .links-container {
+        display: none;
+    }
+}
+
+/* .navbar .logo-container img{
+        height: 3remabsolute;
+} */
+
+.navbar .logo-container a {
+    text-decoration: none;
+    color: rgb(30, 30, 30);
+}
+
+.navbar .logo-container p {
+    
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.navbar .profile-and-ham-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar #login-checkbox {
+    display: none;
+}
+
+.navbar .logedin-container {
+    display: none;
+}
+
+.navbar .logedin-container .logedin-checkbox-label {
+    font-size: 2rem;
+    color: rgb(30, 30, 30);
+}
+
+.navbar:has(#login-checkbox:checked) .logedin-container {
+    display: block;
+}
+
+.navbar:has(#login-checkbox:checked) .login-checkbox-label {
+    display: none;
+}
+
+
+.navbar #ham-checkbox {
+    display: none;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box {
+    border-radius: 1rem;
+    transition: border-radius 0.2s;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box .line {
+    position: absolute;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line2{
+    width: 0;
+    transition: width 0.2s;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line1{
+    transform: rotate(-45deg);
+    transition: transform 0.2s;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line3{
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+}
+
+.navbar .ham-container .box {
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 0.2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.2rem;
+    background-color: white;
+    transition: border-radius 0.2s;
+}
+
+.navbar .ham-container .box .line {
+    border: 1px solid rgb(30, 30, 30);
+    width: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.navbar .ham-container .box #line2 {
+    transition: width 0.2s;
+}
+
+.navbar .links-container ul, .navbar .login-container ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .links-container ul a, .navbar .login-container ul p {
+    text-decoration: none;
+    color: rgb(30, 30, 30);
+    margin-inline-start: 1rem;
+    font-size: 1.5rem;
+}
+
+.navbar .login-container ul p {
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    color: rgb(35, 35, 35);
+}
+
+.navbar .links-container ul a:hover, .navbar .login-container ul p:hover, .navmenu a:hover div, .navbar .ham-container .box:hover, .navbar .ham-container .box:hover .line, .navbar .logo-container p:hover, .navbar .logedin-container .logedin-checkbox-label:hover {
+    color: gray;
+    border-color: gray;
+}
+
+.navmenu {
+    display: none;
+}
+
+.navmenu div {
+    opacity: 0.8;
+    display: none;
+    text-align: center;
+}
+
+.navmenu a {
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+    font-size: 1.5rem;
+}
+
+header:has(#ham-checkbox:checked) .navmenu {
+    display: block;
+}
+
+header:has(#ham-checkbox:checked) .navmenu a:nth-child(even) div {
+    background-color: rgba(242,242,242,0.8);
+}
+
+header:has(#ham-checkbox:checked) .navmenu a:nth-child(odd) div {
+    background-color: rgba(221,221,221,0.8);
+}
+
+@keyframes slideDown {
+    from {
+        padding-block: 0px;
+        height: 0px;
+        font-size: 0px;
+    }
+    to {
+        padding-block: 1rem;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+}
+
+header:has(#ham-checkbox:checked) .navmenu div {
+    padding: 1rem;
+    display: block;
+    animation: slideDown 0.15s;
+}
+
+header:has(#ham-checkbox:checked) .navmenu a{
+
+}
+
+.hero {
+    max-width: 100%;
+    height: 100vh;
+    background-image: url("https://picsum.photos/id/10/1920/1080") ;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+footer {
+    text-align: center;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    padding-block: 1.5rem;
+    font-size: 1.5rem;
+}

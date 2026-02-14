@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo-container">
+          <a href="#home">
+              <p>Logo</p>
+          </a>
+          <!-- <img src="../../Media/logo.png" alt="Logo" /> -->
+        </div>
+        <div class="links-container">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">ContactUs</a></li>
+          </ul>
+        </div>
+        <input
+          type="checkbox"
+          name="ham-checkbox"
+          id="ham-checkbox"
+          class="ham-checkbox"
+        />
+        <input
+          type="checkbox"
+          name="login-checkbox"
+          id="login-checkbox"
+          class="login-checkbox"
+        />
+
+        <div class="profile-and-ham-container">
+          <div class="login-container">
+            <ul>
+              <li>
+                <label for="login-checkbox" class="login-checkbox-label">
+                  <p>Register</p>
+                </label>
+              </li>
+              <li>
+                <label for="login-checkbox" class="login-checkbox-label">
+                  <p>Login</p>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="logedin-container">
+            <label for="login-checkbox" class="logedin-checkbox-label">
+              <i class="fa-regular fa-circle-user"></i>
+            </label>
+          </div>
+          <label for="ham-checkbox" class="ham-checkbox-label">
+            <div class="ham-container">
+              <div class="box">
+                <div class="line" id="line1"></div>
+                <div class="line" id="line2"></div>
+                <div class="line" id="line3"></div>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="navmenu" logedin-checkboxeded>
+        <a href="#home"
+          ><div id="home"><p>Home</p></div></a
+        >
+        <a href="#about"
+          ><div id="about"><p>About</p></div></a
+        >
+        <a href="#services"
+          ><div id="services"><p>Services</p></div></a
+        >
+        <a href="#products"
+          ><div id="products"><p>Products</p></div></a
+        >
+        <a href="#Contact"
+          ><div id="contact"><p>ContactUs</p></div></a
+        >
+      </div>
+    </header>
+    <section class="hero">
+      <div>
+        <h1>Welcome to my website!</h1>
+        <h2>Explore my projects and services</h2>
+
+      </div>
+    </section>
+    <!-- <footer>
+      <p>&copy; Nothin 2026</p>
+    </footer> -->
+  </body>
+</html>
