@@ -14,8 +14,8 @@ body {
 }
 
 header {
-    /* position: sticky;
-    top: 0; */
+    position: absolute;
+    top: 0;
     width: 100%;
 }
 
@@ -26,6 +26,7 @@ header {
     height: 4rem;
     padding-inline: 2rem;
     padding-block: 0.5rem;
+    opacity: 0.8;
     background-color: white;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
     width: 100%;
@@ -47,8 +48,52 @@ header {
         height: 3rem;
 }
 
+.navbar .logo-container a {
+    text-decoration: none;
+    color: rgb(30, 30, 30);
+}
+
+.navbar .logo-container p {
+    
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.navbar .profile-and-ham-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar #login-checkbox {
+    display: none;
+}
+
+.navbar .logedin-container {
+    display: none;
+}
+
+.navbar .logedin-container .logedin-checkbox-label {
+    font-size: 2rem;
+    color: rgb(30, 30, 30);
+}
+
+.navbar:has(#login-checkbox:checked) .logedin-container {
+    display: block;
+}
+
+.navbar:has(#login-checkbox:checked) .login-checkbox-label {
+    display: none;
+}
+
+
 .navbar #ham-checkbox {
     display: none;
+}
+
+.navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box {
+    border-radius: 1rem;
+    transition: border-radius 0.2s;
 }
 
 .navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box .line {
@@ -57,7 +102,7 @@ header {
 
 .navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line2{
     width: 0;
-    transition: width 0.1s;
+    transition: width 0.2s;
 }
 
 .navbar:has(#ham-checkbox:checked) .ham-checkbox-label .ham-container .box #line1{
@@ -71,7 +116,8 @@ header {
 }
 
 .navbar .ham-container .box {
-    border: 2px solid black;
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 0.2rem;
     width: 2rem;
     height: 2rem;
     display: flex;
@@ -80,10 +126,11 @@ header {
     align-items: center;
     padding: 0.2rem;
     background-color: white;
+    transition: border-radius 0.2s;
 }
 
 .navbar .ham-container .box .line {
-    border: 1px solid black;
+    border: 1px solid rgb(30, 30, 30);
     width: 1.2rem;
     transition: transform 0.2s;
 }
@@ -92,63 +139,60 @@ header {
     transition: width 0.2s;
 }
 
-.navbar .links-container ul{
+.navbar .links-container ul, .navbar .login-container ul {
     list-style: none;
     display: flex;
 }
 
-.navbar .links-container ul a{
+.navbar .links-container ul a, .navbar .login-container ul p {
     text-decoration: none;
-    color: black;
+    color: rgb(30, 30, 30);
     margin-inline-start: 1rem;
     font-size: 1.5rem;
 }
 
-.navmenu {
-    display: none;
-    z-index: 100;
+.navbar .login-container ul p {
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    color: rgb(35, 35, 35);
+}
+
+.navbar .links-container ul a:hover, .navbar .login-container ul p:hover, .navmenu a:hover div, .navbar .ham-container .box:hover, .navbar .ham-container .box:hover .line, .navbar .logo-container p:hover, .navbar .logedin-container .logedin-checkbox-label:hover {
+    color: gray;
+    border-color: gray;
 }
 
 .navmenu div {
-    display: none;
-    z-index: 10;
+    opacity: 0.8;
+    text-align: center;
+    transition: padding-block 0.15s ease, height 0.15s ease, font-size 0.15s ease;
 }
 
-header:has(#ham-checkbox:checked) .navmenu {
-    display: block;
+.navmenuUp div {
+    padding-block: 0px;
+    height: 0px;
+    font-size: 0px;
 }
 
-header:has(#ham-checkbox:checked) .navmenu a:nth-child(even) div {
+.navmenuDown div{
+    padding-block: 1rem;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+
+.navmenu a {
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+    font-size: 1.5rem;
+}
+
+.navmenu a:nth-child(even) div {
     background-color: rgba(242,242,242,0.8);
 }
 
-header:has(#ham-checkbox:checked) .navmenu a:nth-child(odd) div {
+.navmenu a:nth-child(odd) div {
     background-color: rgba(221,221,221,0.8);
-}
-
-@keyframes slideDown {
-    from {
-        padding-block: 0px;
-        height: 0px;
-        font-size: 0px;
-    }
-    to {
-        padding-block: 1rem;
-        height: 4rem;
-        font-size: 1.5rem;
-    }
-}
-
-header:has(#ham-checkbox:checked) .navmenu div {
-    padding: 1rem;
-    display: block;
-    animation: slideDown 0.5s;
-}
-
-header:has(#ham-checkbox:checked) .navmenu a{
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
 }
 
 .hero {
@@ -159,6 +203,7 @@ header:has(#ham-checkbox:checked) .navmenu a{
 
 @media screen and (max-width: 1425px) {
     .hero {
+        padding-block-start: 5rem;
         flex-direction: column;
         text-align: center;
     }

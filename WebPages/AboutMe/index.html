@@ -5,19 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css"
+    /> -->
   </head>
+  <script
+    src="https://kit.fontawesome.com/fac69c3900.js"
+    crossorigin="anonymous"
+  ></script>
   <body>
     <header>
       <div class="navbar">
         <div class="logo-container">
-          <img src="../../Media/logo.png" alt="Logo" />
+          <a href="#home">
+            <img src="../../Media/logo.png" alt="Logo" />
+          </a>
         </div>
         <div class="links-container">
           <ul>
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">ContactUs</a></li>
           </ul>
         </div>
         <input
@@ -26,21 +37,60 @@
           id="ham-checkbox"
           class="ham-checkbox"
         />
-        <label for="ham-checkbox" class="ham-checkbox-label">
-          <div class="ham-container">
-            <div class="box">
-              <div class="line" id="line1"></div>
-              <div class="line" id="line2"></div>
-              <div class="line" id="line3"></div>
-            </div>
+        <input
+          type="checkbox"
+          name="login-checkbox"
+          id="login-checkbox"
+          class="login-checkbox"
+        />
+
+        <div class="profile-and-ham-container">
+          <div class="login-container">
+            <ul>
+              <li>
+                <label for="login-checkbox" class="login-checkbox-label">
+                  <p>Register</p>
+                </label>
+              </li>
+              <li>
+                <label for="login-checkbox" class="login-checkbox-label">
+                  <p>Login</p>
+                </label>
+              </li>
+            </ul>
           </div>
-        </label>
+          <div class="logedin-container">
+            <label for="login-checkbox" class="logedin-checkbox-label">
+              <i class="fa-regular fa-circle-user"></i>
+            </label>
+          </div>
+          <label for="ham-checkbox" class="ham-checkbox-label">
+            <div class="ham-container">
+              <div class="box">
+                <div class="line" id="line1"></div>
+                <div class="line" id="line2"></div>
+                <div class="line" id="line3"></div>
+              </div>
+            </div>
+          </label>
+        </div>
       </div>
-      <div class="navmenu">
-        <a href="#about"><div id="about"><p>About</p></div></a>
-        <a href="#skills"><div id="skills"><p>Skills</p></div></a>
-        <a href="#services"><div id="services"><p>Services</p></div></a>
-        <a href="#Contact"><div id="contact"><p>Contact</p></div></a>
+      <div class="navmenu" logedin-checkboxeded>
+        <a href="#home"
+          ><div id="home"><p>Home</p></div></a
+        >
+        <a href="#about"
+          ><div id="about"><p>About</p></div></a
+        >
+        <a href="#services"
+          ><div id="services"><p>Services</p></div></a
+        >
+        <a href="#products"
+          ><div id="products"><p>Products</p></div></a
+        >
+        <a href="#Contact"
+          ><div id="contact"><p>ContactUs</p></div></a
+        >
       </div>
     </header>
     <section class="hero">
@@ -51,8 +101,10 @@
           year. Minimal skill set. Dreams big.
         </p>
         <div class="keywords">
-          <p class="text">&#xf109; Loves Computers</p>
-          <p class="text">&#xf17c; Uses Arch btw</p>
+          <p class="text"><i class="fa-solid fa-laptop"></i> Loves Computers</p>
+          <p class="text">
+            <i class="fa-brands fa-arch-linux"></i> Uses Arch btw
+          </p>
         </div>
       </div>
       <div class="img-container">
@@ -60,7 +112,10 @@
       </div>
     </section>
     <footer>
-      <p>&copy; Nothin 2026</p>
+      <p><i class="fa-regular fa-copyright"></i> Nothin 2026</p>
     </footer>
   </body>
+  <script src="script.js">
+    
+  </script>
 </html>
