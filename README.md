@@ -1,2 +1,3 @@
-[HTML_page](https://nothinormuch.github.io/Frontend/WebPages/index.html)
-[intro_page](https://nothinormuch.github.io/Frontend/WebPages/Responsive/index.html)
+- [About me](https://nothinormuch.github.io/Frontend/WebPages/AboutMe)
+- [HTML Playground](https://nothinormuch.github.io/Frontend/WebPages/HTML_Playground)
+- [Fake Chat](https://nothinormuch.github.io/Frontend/WebPages/FakeChat)
