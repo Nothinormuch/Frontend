@@ -214,16 +214,104 @@ header {
     margin-bottom: 1rem;
 }
 
-
 footer {
-    text-align: center;
-    background-color: white;
-    position: sticky;
-    bottom: 0;
-    width: 100%;
+    background-image: linear-gradient(to bottom,navy, blue );
+    color: white;
 }
 
-footer p {
-    padding-block: 1.5rem;
-    font-size: 1.5rem;
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.contact-container .contact-form {
+    margin-inline-end: 2rem;
+}
+
+.contact-container .contact-form .header {
+    margin-block-end: 1.75rem;
+    color: white;
+}
+
+.contact-container .contact-form .header h1 {
+    margin-block-end: 0.5rem;
+    color: rgb(247, 95, 247);
+}
+
+.contact-container .body-container fieldset {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.contact-container .body-container input {
+    border-radius: 0.75rem;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    width: 45%;
+    border: none;
+    margin-block: 0.5rem;
+    margin-inline: 0.3rem;
+    color: white;
+    font-weight: bolder;
+    outline: none;
+    background-color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+}
+
+.contact-container .body-container input::placeholder {
+    color: white;
+    font-weight: bolder;
+}
+
+.contact-container .body-container textarea {
+    margin-inline-start: 0.3rem;
+    margin-block-start: 0.75rem;
+    height: 8rem;
+    width: 93%;
+    border-radius: 0.75rem;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgba(255,255,255,0.5);
+    font-weight: bolder;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.contact-container .body-container textarea::placeholder {
+    color: white;
+    font-weight: bolder;
+}
+
+.contact-container .body-container input[type="submit"] {
+    color: white;
+    width: 8rem;
+    background-color: rgba(247, 95, 247);;
+}
+
+.contact-container .our-contact {
+    margin-inline-start: 2rem;
+    text-align: right;
+}
+
+.contact-container .contact h1,.contact-container .contact address,.contact-container .contact p {
+    padding-block-end: 1.5rem;
+}
+
+.contact-container .contact a,.contact-container .follow-us i {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+.contact-container .follow-us i {
+    font-size: 2rem;
+    margin-inline: 0.2rem;
+    margin-block: 1rem;
+}
+
+.contact-container .follow-us h1, .contact-container .contact h1{
+    color: rgb(247, 95, 247);
 }
