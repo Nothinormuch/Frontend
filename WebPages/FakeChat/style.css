@@ -2,7 +2,8 @@
     --primary: rgba(104,52,212,1);
     --seconday: rgba(104,52,212,0.8);
     --background-primary: white;
-    --background-secondary: rgb(242,240,239);
+    /* --background-secondary: rgb(242,240,239); */
+    --background-secondary: #f0f4ff;
     --text-primary: white;
     --text-secondary: black;
 }

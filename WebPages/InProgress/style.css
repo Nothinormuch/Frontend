@@ -215,7 +215,7 @@ header {
 }
 
 footer {
-    background-image: linear-gradient(to bottom,navy, blue );
+    background-image: linear-gradient(to right,rgb(0, 0, 55), blue );
     color: white;
 }
 
@@ -258,6 +258,7 @@ footer {
     outline: none;
     background-color: rgba(255,255,255,0.5);
     font-size: 1rem;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
 }
 
 .contact-container .body-container input::placeholder {
@@ -278,6 +279,7 @@ footer {
     font-weight: bolder;
     padding: 0.75rem;
     font-size: 1rem;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
 }
 
 .contact-container .body-container textarea::placeholder {
@@ -288,7 +290,8 @@ footer {
 .contact-container .body-container input[type="submit"] {
     color: white;
     width: 8rem;
-    background-color: rgba(247, 95, 247);;
+    background-color: rgba(247, 95, 247);
+    box-shadow: none;
 }
 
 .contact-container .our-contact {
