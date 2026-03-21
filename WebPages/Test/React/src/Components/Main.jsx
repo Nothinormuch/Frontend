@@ -1,7 +1,6 @@
-function MainContent(){
+function Main(){
   return (
     <main>
-      <div className="text-content">
         <h1 className="hero-heading">Fun facts about React</h1>
         <ul className="fact-list">
           <li className="fact">Was first released in 2013</li>
@@ -10,8 +9,7 @@ function MainContent(){
           <li className="fact">Is maintained by Meta</li>
           <li className="fact">Powers thousands of enterprise apps, including mobile apps</li>
         </ul>
-      </div>
     </main>
   )
 }
-export { MainContent }
+export default Main

@@ -1,10 +1,12 @@
 function Header(){
   return (
     <header>
-      <img className="header-logo" src="/src/assets/react.svg" alt="react logo" />
-      <p className="header-text">ReactFacts</p>
+      <nav>
+        <img className="navbar-logo" src="/src/assets/reactjs-icon.svg" alt="react logo" />
+        <p className="navbar-text">ReactFacts</p>
+      </nav>
     </header>
   )
 }
 
-export { Header }
+export default Header

@@ -1,13 +1,13 @@
-import { Header } from './Components/Header.jsx'
-import { MainContent } from './Components/MainContent.jsx'
+import Header from './Components/Header.jsx'
+import Main from './Components/Main.jsx'
 
 function App(){
     return (
         <>
             <Header />
-            <MainContent />
+            <Main />
         </>
     )
 }
 
-export { App }
+export default App
