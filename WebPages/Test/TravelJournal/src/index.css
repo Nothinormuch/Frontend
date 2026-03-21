@@ -1,0 +1,92 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #F55A5A;
+  color: white;
+  height: 3.4275rem;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 0.90375rem;
+  line-height: 1.125rem;
+  letter-spacing: -7.5%;
+  display: flex;
+  gap: 0.4375rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo {
+  width: 1.5rem;
+}
+
+article.journal {
+  margin-block: 2.8125rem;
+  margin-inline: 2.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  gap: 1.1875rem;
+  width: 29.375rem;
+  font-family: Inter;
+}
+
+.entry-image {
+  width: 7.8125rem;
+  height: 10.5rem;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+.entry-location {
+  display: flex;
+  gap: 0.75rem;
+  font-weight: 400;
+  font-size: 0.64rem;
+  line-height: 0.75rem;
+}
+
+.country {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.country-name {
+  letter-spacing: 17%;
+}
+
+.location-link {
+  color: #918E9B;
+}
+
+.entry-name {
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 1.875rem;
+  margin-block-start: 0.25rem;
+}
+
+span.entry-date {
+  font-weight: 700;
+  font-size: 0.64rem;
+  line-height: 0.75rem;
+  margin-block-start: 1.0625rem;
+  display: block;
+}
+
+.entry-desc {
+  font-weight: 400;
+  font-size: 0.64rem;
+  line-height: 150%;
+  margin-block-start: 0.5625rem;
+}
