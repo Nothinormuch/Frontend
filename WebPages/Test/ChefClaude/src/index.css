@@ -1,0 +1,68 @@
+* {
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FAFAF8;
+}
+
+nav {
+    height:111px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    background-color: white;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px 0px rgba(0,0,0,0.06);
+}
+
+nav>h1{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 60px;
+    letter-spacing: -5%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 180px;
+}
+
+.prompt,.prompt-submit {
+    outline: none;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.05);
+    font-family: Inter;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    padding-block: 9px;
+    border-radius: 6px;
+}
+
+.prompt{
+    border: 1px solid #D1D5DB;
+    font-weight: 400;
+    color: #6B7280;
+    padding-inline: 13px;
+    min-width: 300px;
+    max-width: 400px;
+    flex-grow: 1;
+}
+
+.prompt-submit {
+    background-color: #141413;
+    color: #FAFAF8;
+    font-weight: 500;
+    padding-inline: 35.5px;
+    border: none;
+}
+.prompt-submit::before{
+    content: "+";
+    margin-inline-end: 3px;
+}
