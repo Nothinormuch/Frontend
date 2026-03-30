@@ -1,0 +1,29 @@
+.meme{
+  position:relative;
+}
+.top-text,.bottom-text{
+  font-family: 'Impact';
+  font-weight:900;
+  font-size:32px;
+  color:white;
+  text-shadow:
+      -2px -2px 0 #000,  /* Top-left shadow */
+     2px -2px 0 #000,  /* Top-right shadow */
+    -2px  2px 0 #000,  /* Bottom-left shadow */
+     2px  2px 0 #000;  /* Bottom-right shadow */
+     ;
+  display:block;
+  position:absolute;
+}
+.top-text{
+  top:2rem;
+  left: 50%;
+  white-space:nowrap;
+  transform: translateX(-50%);
+}
+.bottom-text{
+  bottom:2rem;
+  white-space:nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+}

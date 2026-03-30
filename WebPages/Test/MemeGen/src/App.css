@@ -1,0 +1,12 @@
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+  font-family:Karla;
+}
+main{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start:28px;
+}

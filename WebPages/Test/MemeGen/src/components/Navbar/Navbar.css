@@ -1,0 +1,16 @@
+nav{
+  background-image:linear-gradient(to right, #672280, #A626D3);
+  padding-block:22px;
+  display:flex;
+  align-items: center;
+  gap:6.69px;
+  padding-inline: 29px;
+}
+p {
+  display:inline;
+  font-weight:700;
+  font-size: 20.75px;
+  line-height: 24px;
+  letter-spacing: -10%;
+  color:white;
+}
