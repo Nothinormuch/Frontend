@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default ({ genRecipe, setRecipe }) => {
+export default ({ genRecipe, setRecipe, ref }) => {
   const [errorCode, setErrorCode] = useState(0);
   const [ingredients, setIngredients] = useState(["potatoes", "onions", "oil"]);
   function addIngredient(formData) {
@@ -57,7 +57,7 @@ export default ({ genRecipe, setRecipe }) => {
         </div>
       )}
       {ingredients.length > 2 && (
-        <div className="recipe-suggession-container">
+        <div ref={ref} className="recipe-suggession-container">
           <div className="recipe-suggession-text">
             <h2>Ready for a recipe?</h2>
             <span>Generate a recipe from your list of ingredients.</span>
