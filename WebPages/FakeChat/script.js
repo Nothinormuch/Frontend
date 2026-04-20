@@ -32,9 +32,8 @@ function sendMessage(type,ev) {
 
             setTimeout(() => {
                 const botMessage = document.createElement("div");
-                // botMessage.textContent = "bot: "+userPrompt;
 
-                const genericReplies = ["Hello","How are you","Bye"];
+                const genericReplies = ["Hello","Hi","Ill keep that in mind","How are you","Bye","Understood","Totally","Ill review and get back to you","Thanks for sharing!","Makes sense"];
                 botMessage.textContent = genericReplies[Math.floor(Math.random()*genericReplies.length)]
                 prompt.value = "";
                 botMessage.classList.add("message","notSent","bot");

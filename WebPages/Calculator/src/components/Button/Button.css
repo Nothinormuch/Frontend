@@ -1,0 +1,19 @@
+button{
+    outline: none;
+    border:none;
+    border-radius: 0.4rem;
+    height:5rem;
+    width:5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.special{
+    background-color: rgba(76, 76, 76);
+}
+.operator{
+    background-color: rgba(178, 90, 42);
+}
+.num{
+    background-color: rgba(51, 51, 51);
+}

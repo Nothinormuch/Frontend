@@ -1,0 +1,54 @@
+:root{
+    --background:rgba(45, 45, 45);
+    --text:rgba(253, 253, 253);
+    --text-muted:hsl(0, 0%, 80%);
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-window{
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    border: 0.25rem solid rgba(109, 109, 109);
+    width: 25rem;
+    height: 40rem;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 2rem;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+}
+
+.display{
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: var(--text);
+    text-align: end;
+}
+
+#expression{
+    font-size: 2rem;
+    min-height: 2.5rem;
+}
+
+#result{
+    font-size: 4rem;
+}
+
+.button-grid{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 0.9rem;
+}
