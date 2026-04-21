@@ -1,0 +1,112 @@
+:root {
+  --bg-dark: hsl(220 59% 91%);
+  --bg: rgb(240, 245, 255);
+  --bg-light: hsl(220 100% 100%);
+  --text: hsl(226 85% 7%);
+  --text-muted: hsl(220 26% 31%);
+  --highlight: hsl(220 100% 100%);
+  --border: hsl(220 19% 53%);
+  --border-muted: hsl(220 27% 65%);
+  --primary: hsl(221 49% 33%);
+  --secondary: hsl(44 100% 14%);
+  --danger: hsl(9 21% 41%);
+  --warning: hsl(52 23% 34%);
+  --success: hsl(147 19% 36%);
+  --info: hsl(217 22% 41%);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  font-family: Inter;
+  color: var(--text);
+}
+
+.wrapper {
+  padding-inline: 10rem;
+  padding-block: 13rem;
+  width: 51rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    inset 0 0 15px rgba(135, 135, 135, 0.1),
+    0 0 18px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  background-color: rgba(240, 245, 255);
+  border: 1px solid rgba(235, 235, 235, 0.1);
+}
+
+h1 {
+  font-size: 4rem;
+  margin-block-end: 2rem;
+  font-weight: 700;
+}
+
+input {
+  background-color: var(--bg-light);
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+  margin-block-end: 1rem;
+  font-weight: 900;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 900;
+  margin-inline-start: 0.8rem;
+  min-height: 1rem;
+}
+
+.level1 p,
+.level1 input {
+  color: red;
+}
+.level1 input {
+  border: 2.5px solid red;
+}
+
+.level2 p,
+.level2 input {
+  color: darkorange;
+}
+.level2 input {
+  border: 2px solid darkorange;
+}
+
+.level3 p,
+.level3 input {
+  color: orange;
+}
+.level3 input {
+  border: 2px solid orange;
+}
+
+.level4 p,
+.level4 input {
+  color: yellow;
+}
+.level4 input {
+  border: 2px solid yellow;
+}
+
+.level5 p,
+.level5 input {
+  color: lime;
+}
+.level5 input {
+  border: 2px solid lime;
+}

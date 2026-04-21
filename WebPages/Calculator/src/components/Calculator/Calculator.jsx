@@ -14,8 +14,11 @@ function Calculator(){
     }
 
     function genResult(){
-        setResult(eval(expression));
-        setExpression("")
+        if(expression)
+        {
+            setResult(eval(expression));
+            setExpression("")
+        }
     }
 
     function clearDisplay(){
@@ -29,7 +32,7 @@ function Calculator(){
         })
     }
 
-    let buttonGrid = [{value:"%",color:"special"},{value:"/",color:"operator"},{value:"7",color:"num"},{value:"8",color:"num"},{value:"9",color:"num"},{value:"*",color:"operator"},{value:"4",color:"num"},{value:"5",color:"num"},{value:"6",color:"num"},{value:"-",color:"operator"},{value:"1",color:"num"},{value:"2",color:"num"},{value:"3",color:"num"},{value:"+",color:"operator"},{value:"",color:"num"},{value:"0",color:"num"},{value:"",color:"num"}];
+    let buttonGrid = [{value:"%",color:"special"},{value:"/",color:"operator"},{value:"7",color:"num"},{value:"8",color:"num"},{value:"9",color:"num"},{value:"*",color:"operator"},{value:"4",color:"num"},{value:"5",color:"num"},{value:"6",color:"num"},{value:"-",color:"operator"},{value:"1",color:"num"},{value:"2",color:"num"},{value:"3",color:"num"},{value:"+",color:"operator"},{value:"(",color:"num"},{value:"0",color:"num"},{value:")",color:"num"}];
 
     return (
         <>
