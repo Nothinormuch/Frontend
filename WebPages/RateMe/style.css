@@ -3,7 +3,7 @@
   --bg: rgb(240, 245, 255);
   --bg-light: hsl(220 100% 100%);
   --text: hsl(226 85% 7%);
-  --text-muted: hsl(220 26% 31%);
+  --text-muted: rgb(58, 72, 100);
   --highlight: hsl(220 100% 100%);
   --border: hsl(220 19% 53%);
   --border-muted: hsl(220 27% 65%);
@@ -33,7 +33,7 @@ body {
 
 .wrapper {
   padding-inline: 10rem;
-  padding-block: 13rem;
+  padding-block: 12rem;
   width: 51rem;
   height: 40rem;
   display: flex;
@@ -48,22 +48,14 @@ body {
 
 h1 {
   font-size: 4rem;
-  margin-block-end: 2rem;
+  margin-block-end: 4rem;
   font-weight: 700;
   text-align: center;
 }
 
-input {
-  background-color: var(--bg-light);
-  border: none;
-  outline: none;
-  font-size: 2rem;
-  padding-inline: 2rem;
-  padding-block: 1rem;
-  border-radius: 1rem;
-  margin-block-end: 1rem;
-  font-weight: 900;
-  border: 2.5px solid rgba(58, 72, 100,0.2);
+.star-container{
+  display: flex;
+  justify-content: space-between;
 }
 
 p {
@@ -73,42 +65,11 @@ p {
   min-height: 1rem;
 }
 
-.level1 p,
-.level1 input {
-  color: red;
-}
-.level1 input {
-  border: 2.5px solid red;
+i{
+  font-size: 5rem;
+  color: rgba(58, 72, 100,0.5);
 }
 
-.level2 p,
-.level2 input {
-  color: darkorange;
-}
-.level2 input {
-  border: 2px solid darkorange;
-}
-
-.level3 p,
-.level3 input {
-  color: orange;
-}
-.level3 input {
-  border: 2px solid orange;
-}
-
-.level4 p,
-.level4 input {
-  color: yellow;
-}
-.level4 input {
-  border: 2px solid yellow;
-}
-
-.level5 p,
-.level5 input {
-  color: lime;
-}
-.level5 input {
-  border: 2px solid lime;
+.filled{
+  color: hsl(48, 97%, 48%);
 }
