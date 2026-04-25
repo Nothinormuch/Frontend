@@ -1,0 +1,23 @@
+.user-container {
+  padding-inline: 2rem;
+  padding-block: 2rem;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  color: #f7cb73;
+  min-height: 8rem;
+}
+
+.current {
+  color: var(--primary);
+  font-size: 4rem;
+}
+.voted {
+  color: #5dbe3f;
+}
+
+i {
+  transition: all 0.2s linear;
+}

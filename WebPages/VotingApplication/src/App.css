@@ -1,0 +1,51 @@
+:root {
+  --bg-dark: hsl(220 59% 91%);
+  --bg: hsl(220 100% 97%);
+  --bg-light: hsl(220 100% 100%);
+  --text: hsl(226 85% 7%);
+  --text-muted: hsl(220 26% 31%);
+  --highlight: hsl(220 100% 100%);
+  --border: hsl(220 19% 53%);
+  --border-muted: hsl(220 27% 65%);
+  --primary: #007bff;
+  --primary-muted: #79b6eb;
+  --secondary: hsl(44 100% 14%);
+  --danger: hsl(9 21% 41%);
+  --warning: hsl(52 23% 34%);
+  --success: hsl(147 19% 36%);
+  --info: hsl(217 22% 41%);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: Inter;
+  color: var(--text);
+  letter-spacing: -5%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 5rem;
+}
+
+.vote-container,
+.user-container,
+.result-container {
+  background-color: var(--bg);
+  box-shadow:
+    inset 0 0 15px rgba(135, 135, 135, 0.1),
+    0 0 18px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 2rem;
+}

@@ -1,0 +1,90 @@
+.vote-container {
+  min-height: 20rem;
+  width: 50rem;
+  padding-inline: 5rem;
+  padding-block: 5rem;
+}
+
+.choice-container {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.choice {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.choice-input {
+  align-self: flex-start;
+  font-weight: 700;
+  padding-block: 0.5rem;
+  transition: all 0.1s ease-out;
+}
+.choice-input:hover {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.1s ease-out;
+}
+
+.selected {
+  font-size: 1.2rem;
+  background-color: var(--primary) !important;
+  transition: all 0.1s ease-out;
+}
+
+label {
+  background-color: var(--bg);
+  margin-inline-start: 0.5rem;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  transition: all 0.1s ease-out;
+  border-radius: 1rem;
+}
+label:hover {
+  cursor: pointer;
+  background-color: var(--primary-muted);
+}
+
+.question {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+button {
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 2rem;
+  transition: all 0.1s linear;
+}
+button:hover {
+  background-color: var(--primary-muted);
+  cursor: pointer;
+  transition: all 0.1s linear;
+  padding-inline: 2.2rem;
+  padding-block: 1.2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.choice-input {
+  align-self: flex-start;
+}
+.vote {
+  align-self: flex-end;
+}
