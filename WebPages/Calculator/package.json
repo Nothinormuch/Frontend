@@ -1,5 +1,6 @@
 {
   "name": "calculator",
+  "homepage": "https://nothinormuch.github.io/Frontend/Calculator/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

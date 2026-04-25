@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "This repository contains my comprehensive journey through frontend web development, bridging the gap between foundational academic coursework and modern library-based application building.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nothinormuch/Frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Nothinormuch/Frontend/issues"
+  },
+  "homepage": "https://github.com/Nothinormuch/Frontend#readme"
+}
