@@ -1,0 +1,16 @@
+a {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 2.4rem;
+  font-weight: 900;
+  padding-inline: 0.6rem;
+  padding-block: 0.6rem;
+}
+
+.logo.primary {
+  color: var(--text-primary);
+}
+.logo.secondary {
+  color: var(--text-secondary);
+}

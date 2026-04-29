@@ -1,0 +1,23 @@
+.nav-list.search {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border-radius: 0.8rem;
+  padding-inline: 0.4rem;
+  padding-block: 0.2rem;
+  width: 100%;
+}
+
+.nav-list.search input {
+  flex-grow: 1;
+  font-size: 1rem;
+  padding-block: 0.6rem;
+  padding-inline: 0.5rem;
+  background-color: var(--input-background);
+  outline: none;
+  border: none;
+}
+
+.nav-list.search i {
+  color: var(--text-primary)
+}

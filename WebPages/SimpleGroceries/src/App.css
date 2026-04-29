@@ -1,0 +1,27 @@
+:root{
+  --bg: hsl(210, 91%, 86%);
+  --bg-light: hwb(211 77% 1%);
+  --bg-dark: hsl(210, 26%, 54%);
+  --primary: hsl(210, 80%, 74%);
+  --primary-light: hsl(210, 80%, 77%);
+  --text-primary: hsl(209, 23%, 28%);
+  --text-primary-dark: hsl(209, 23%, 10%);
+  --text-secondary: hsl(180, 92%, 30%);
+  --text-secondary-light: hsl(180, 92%, 95%);
+  --text: hsl(210, 80%, 74%);
+  --text-light: #ffffff;
+  --input-bg: hsl(0, 0%, 97%);
+  --border: rgba(102, 102, 102,0.3);
+  --item-bg: hsl(210, 91%, 95%);
+}
+
+* {
+  padding: 0rem;
+  margin: 0rem;
+  box-sizing: border-box;
+  font-family: Nunito;
+}
+
+body {
+  background-color: var(--bg-light);
+}

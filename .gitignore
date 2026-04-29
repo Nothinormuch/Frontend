@@ -5,6 +5,10 @@ node_modules/
 .env
 .env.*
 
+# build files
+dist/
+build/
+
 # logs
 logs
 *.log
