@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage.jsx";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import BrowsePage from "./pages/BrowsePage/BrowsePage.jsx";
 import "./App.css";
+import CartPage from "./pages/CartPage/CartPage.jsx";
 
 export default () => {
   const router = createBrowserRouter([

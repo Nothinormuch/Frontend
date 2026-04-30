@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo.jsx";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import "./Navbar.css";
-import Profile from "../Profile/Profile.jsx";
+import Menu from "../Menu/Menu.jsx";
 
-export default () => {
+export default (props) => {
   return (
     <nav>
       <ul>
@@ -15,10 +15,10 @@ export default () => {
           </Link>
         </li>
         <li className="nav-list search item">
-          <SearchBar/>
+          <SearchBar />
         </li>
-        <li className="nav-list profile item">
-          <Profile/>
+        <li className="nav-list menu item">
+          <Menu cart={props.cart} toggleCartShown={props.toggleCartShown} />
         </li>
       </ul>
     </nav>

@@ -1,0 +1,22 @@
+.cart-btn-container {
+  position: relative;
+}
+
+.cart-btn {
+  border: 0.2rem solid var(--text-secondary) !important;
+  background-color: var(--text-primary-super-light) !important;
+}
+
+.cart-size {
+  position: absolute;
+  color: var(--text-light);
+  background-color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1rem;
+  padding-inline: 0.6rem;
+  padding-block-start: 0.5rem;
+  padding-block-end: 0.4rem;
+  border-radius: 1rem;
+  top: 0px;
+  right: -10px;
+}

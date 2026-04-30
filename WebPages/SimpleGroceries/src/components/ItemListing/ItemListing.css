@@ -3,12 +3,22 @@
   background-color: var(--item-bg);
   max-height: 30rem;
   max-width: 15rem;
-  padding-inline: 0.5rem;
-  padding-block: 0.5rem;
+  padding-inline: 0.8rem;
+  padding-block: 0.8rem;
   border-radius: 0.5rem;
   color: var(--text-primary-dark);
   font-weight: 700;
   border: 0.2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 820px) {
+  .item-listing.container {
+    max-height: 35rem;
+    max-width: 30rem;
+  }
 }
 
 .item-listing.container img {
@@ -19,6 +29,7 @@
 }
 
 .item-listing.container .dilevry-time {
+  margin-block-start: 0.5rem;
   font-size: 0.5rem;
 }
 
@@ -51,8 +62,8 @@
   border-radius: 0.5rem;
 }
 
-.item-listing.container .shop-container button:hover{
-  cursor:pointer;
+.item-listing.container .shop-container button:hover {
+  cursor: pointer;
 }
 
 .item-listing.container .price-container {
@@ -66,4 +77,35 @@
   text-decoration: line-through;
   color: var(--text-primary);
   font-weight: 400;
+}
+
+@media screen and (max-width: 820px) and (min-width: 0px) {
+  .item-listing.container .dilevry-time {
+    font-size: 0.7rem;
+  }
+
+  .item-listing.container h2 {
+    font-size: 1rem;
+  }
+
+  .item-listing.container h3 {
+    font-size: 0.9rem;
+  }
+
+  .item-listing.container .shop-container {
+    margin-block-start: 1.2rem;
+  }
+
+  .item-listing.container .shop-container button {
+    font-size: 1.2rem;
+  }
+
+  .item-listing.container .price-container {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+
+.ammount{
+  margin-inline: 0.5rem;
 }

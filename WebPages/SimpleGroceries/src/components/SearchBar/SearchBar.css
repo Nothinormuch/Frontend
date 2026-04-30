@@ -8,7 +8,9 @@
   width: 100%;
 }
 
+
 .nav-list.search input {
+  border: none;
   flex-grow: 1;
   font-size: 1rem;
   padding-block: 0.6rem;
@@ -19,5 +21,6 @@
 }
 
 .nav-list.search i {
-  color: var(--text-primary)
+  border: none;
+  color: var(--text-primary);
 }

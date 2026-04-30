@@ -1,0 +1,83 @@
+.cart-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--muted-bg);
+  top: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: end;
+}
+
+.cart-panel {
+  background-color: var(--bg-dark);
+  height: 100vh;
+  width: 25rem;
+  overflow-y:auto;
+}
+
+.cart-item-list {
+  background-color: var(--bg);
+  margin-inline: 0.5rem;
+  margin-block: 0.5rem;
+  border-radius: 0.5rem;
+}
+.delivery-detail {
+  display: flex;
+  align-items: center;
+}
+
+.delivery-detail i {
+  font-size: 2rem;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+  margin: 0.5rem;
+}
+.delivery-detail .text h2 {
+  font-size: 1rem;
+  color: var(--text-primary-dark);
+  font-weight: 900;
+}
+
+.delivery-detail .text p {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.delivery-detail {
+  display: flex;
+}
+.bill-wrapper{
+  background-color: var(--bg);
+  margin-inline: 0.5rem;
+  margin-block: 0.5rem;
+  border-radius: 0.5rem;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+.bill-entry{
+  display: flex;
+  justify-content: space-between;
+}
+.bill-wrapper h2{
+  font-weight:  900;
+  font-size: 1rem;
+  color: var(--text-primary-dark);
+}
+.key{
+  color: var(--text-primary);
+  font-weight:  600;
+  font-size: 0.8rem;
+}
+.value{
+  color: var(--text-primary);
+  font-weight:  600;
+  font-size: 0.8rem;
+}
+
+.total{
+  font-weight: 900;
+  color: var(--text-primary-dark);
+}

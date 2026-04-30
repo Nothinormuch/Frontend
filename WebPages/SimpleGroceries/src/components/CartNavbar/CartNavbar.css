@@ -1,0 +1,32 @@
+.cart-navbar {
+  background-color: var(--bg);
+  width: 100%;
+  padding-block: 1rem;
+  padding-inline: 0.5rem;
+}
+
+.cart-navbar ul {
+  display: flex;
+  justify-content: start;
+  gap: 0;
+}
+
+.cart-navbar li {
+  padding: 0px;
+}
+
+.cart-navbar .close-button {
+  background-color: var(--bg);
+  border: none;
+  font-size: 1rem;
+  margin-inline-start: 0.6rem;
+}
+.cart-navbar .close-button:hover {
+  cursor: pointer;
+}
+
+.cart-navbar h2 {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-inline-start: 0.6rem;
+}

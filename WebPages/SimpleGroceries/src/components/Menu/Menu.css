@@ -1,0 +1,48 @@
+.menu-list {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 1616px) {
+  .menu-list {
+    margin-inline-start: 6rem;
+  }
+}
+
+.menu-list button {
+  outline: none;
+  border: none;
+  padding-inline: 0.8rem;
+  padding-block: 0.8rem;
+  border-radius: 1rem;
+  background-color: var(--input-bg);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.menu-list button:hover {
+  cursor: pointer;
+}
+
+.menu-list .login-btn {
+  background-color: var(--text-primary-super-light);
+  border: 0.2rem solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.menu-list .register-btn {
+  background-color: var(--text-secondary-super-light);
+  border: 0.2rem solid var(--text-secondary);
+  color: var(--text-secondary);
+}
+
+.menu-list{
+  border-radius: 1rem;
+  padding-inline: 1rem;
+  transition: background-color 0.2s ease-out;
+}
+
+.menu-list:hover {
+  background-color: var(--primary-light);
+  transition: background-color 0.2s ease-out;
+}

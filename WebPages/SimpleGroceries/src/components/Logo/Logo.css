@@ -14,3 +14,13 @@ a {
 .logo.secondary {
   color: var(--text-secondary);
 }
+
+@media screen and (max-width: 1030px) {
+  .logo.body {
+    display: none;
+  }
+}
+
+.logo{
+  transition: background-color 0.2s ease-out;
+}
