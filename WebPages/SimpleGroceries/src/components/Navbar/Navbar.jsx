@@ -18,7 +18,11 @@ export default (props) => {
           <SearchBar />
         </li>
         <li className="nav-list menu item">
-          <Menu cart={props.cart} toggleCartShown={props.toggleCartShown} />
+          <Menu
+            cart={props.cart}
+            toggleCartShown={props.toggleCartShown}
+            currentUser={props.currentUser}
+          />
         </li>
       </ul>
     </nav>

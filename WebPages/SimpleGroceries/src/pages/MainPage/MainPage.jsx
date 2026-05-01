@@ -12,10 +12,11 @@ export default () => {
       return { index: index, count: 0 };
     }),
   );
-  const [cartShown, setCartShown] = useState(false);
   function toggleCartShown() {
     setCartShown((cartShown) => !cartShown);
   }
+
+  const [cartShown, setCartShown] = useState(false);
   function addItem(index) {
     setCart((oldCart) => [
       ...oldCart.slice(0, index),
@@ -32,10 +33,35 @@ export default () => {
       ]);
     }
   }
+
+  const [userList, setUserList] = useState([]);
+  function addUser(name, email, passHash) {
+    setUserList((userList) => {
+      return [...userList, { name: name, email: email, passHash: passHash }];
+    });
+  }
+  async function hashGen(pass) {
+    return Array.from(
+      new Uint8Array(
+        await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pass)),
+      ),
+    )
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  const [currentUser, setCurrentUser] = useState("");
+  function changeCurrentUser(name) {
+    setCurrentUser(name);
+  }
   return (
     <>
       <header>
-        <Navbar cart={cart} toggleCartShown={toggleCartShown} />
+        <Navbar
+          cart={cart}
+          toggleCartShown={toggleCartShown}
+          currentUser={currentUser}
+        />
       </header>
       <main className="wrapper-wrapper">
         <div className="wrapper">
@@ -46,6 +72,11 @@ export default () => {
               setCart: setCart,
               addItem: addItem,
               removeItem: removeItem,
+              addUser: addUser,
+              users: userList,
+              changeCurrentUser: changeCurrentUser,
+              currentUser: currentUser,
+              hashGen: hashGen,
             }}
           />
         </div>

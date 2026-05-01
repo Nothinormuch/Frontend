@@ -1,13 +1,15 @@
 :root{
-  --bg: hsl(210, 91%, 86%);
-  --bg-light: hwb(211 77% 1%);
+  --bg: rgb(187, 219, 252);
+  --bg-light: #c4dffc;
   --bg-dark: hsl(210, 26%, 54%);
   --primary: hsl(210, 80%, 74%);
   --primary-light: hsl(210, 80%, 77%);
   --text-primary: hsl(209, 23%, 28%);
-  --text-primary-super-light: hsl(209, 23%, 95%);
+  --text-primary-super-light: #eff2f5;
   --text-primary-dark: hsl(209, 23%, 10%);
   --text-secondary: hsl(180, 92%, 30%);
+  --text-secondary-active: hsl(180, 92%, 35%);
+  --text-secondary-dark: hsl(180, 92%, 10%);
   --text-secondary-super-light: hsl(180, 92%, 95%);
   --text-secondary-light: hsl(180, 92%, 95%);
   --text: hsl(210, 80%, 74%);
