@@ -4,7 +4,7 @@ export default (props) => {
   return (
     <>
       <div className="profile">
-        <i class="fa-solid fa-circle-user"></i>
+        <i className="fa-solid fa-circle-user"></i>
         <span>{props.currentUser}</span>
       </div>
     </>

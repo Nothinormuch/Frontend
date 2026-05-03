@@ -11,7 +11,6 @@ export default (props) => {
       acc + Number(props.items[curr.index].currentPrice.slice(1)) * curr.count
     );
   }, 0);
-  console.log(total);
   return (
     <>
       <div className="cart-wrapper">

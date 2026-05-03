@@ -32,7 +32,7 @@
 }
 
 .menu-list .register-btn {
-  background-color: var(--text-secondary-super-light);
+  background-color: var(--text-primary-super-light);
   border: 0.2rem solid var(--text-secondary);
   color: var(--text-secondary);
 }

@@ -7,10 +7,10 @@ export default () => {
     <>
       <div className="landing-container">
         <Link to={props.currentUser === "" ? "/login" : "/browse"}>
-          <img src="/banner.avif" alt="banner" />
+          <img src="/Frontend/SimpleGroceries/banner.avif" alt="banner" />
         </Link>
         <Link to={props.currentUser === "" ? "/login" : "/browse"}>
-          <img src="/sub-banner-blue.avif" alt="banner" />
+          <img src="/Frontend/SimpleGroceries/sub-banner-blue.avif" alt="banner" />
         </Link>
       </div>
     </>

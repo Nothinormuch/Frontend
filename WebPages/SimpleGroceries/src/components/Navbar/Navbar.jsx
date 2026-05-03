@@ -10,7 +10,7 @@ export default (props) => {
     <nav>
       <ul>
         <li className="nav-list logo item">
-          <Link href="/">
+          <Link to="/">
             <Logo />
           </Link>
         </li>

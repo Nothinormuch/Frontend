@@ -1,8 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import "./CartNavbar.css";
 
 export default (props) => {
-  const navigate = useNavigate();
   return (
     <>
       <nav className="cart-navbar">

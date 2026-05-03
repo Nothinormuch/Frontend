@@ -9,18 +9,26 @@ import "./App.css";
 import CartPage from "./pages/CartPage/CartPage.jsx";
 
 export default () => {
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <MainPage />,
+        errorElement: <NotFoundPage />,
+        children: [
+          { index: true, element: <HomePage /> },
+          {
+            path: "register",
+            element: <RegisterPage />,
+          },
+          { path: "login", element: <LoginPage /> },
+          { path: "browse", element: <BrowsePage /> },
+        ],
+      },
+    ],
     {
-      path: "/",
-      element: <MainPage />,
-      errorElement: <NotFoundPage />,
-      children: [
-        { path: "/", element: <HomePage /> },
-        { path: "/register", element: <RegisterPage /> },
-        { path: "/login", element: <LoginPage /> },
-        { path: "/browse", element: <BrowsePage /> },
-      ],
+      basename: "/Frontend/SimpleGroceries",
     },
-  ]);
+  );
   return <RouterProvider router={router} />;
 };
