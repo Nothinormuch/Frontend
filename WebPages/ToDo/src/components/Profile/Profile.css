@@ -1,0 +1,23 @@
+.profile button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid var(--text-primary) !important;
+  background-color: var(--text-primary-super-light) !important;
+  padding-inline: 0.8rem;
+  padding-block: 0.8rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.profile i {
+  font-size: 1.5rem;
+}
+
+.profile span {
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}

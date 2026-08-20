@@ -1,0 +1,19 @@
+.loading-wrapper{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading{
+  background-color: var(--item-bg);
+  padding-inline: 5rem;
+  padding-block: 5rem;
+  border-radius: 2rem;
+}
+
+.loading h1{
+  color: var(--text-primary);
+  font-weight: 900;
+  font-size: 2rem;
+}

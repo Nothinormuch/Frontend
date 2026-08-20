@@ -4,19 +4,6 @@ import MainPage from "./pages/MainPage/MainPage.jsx";
 import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import "./App.css";
-import ToDoPage from "./pages/ToDoPage/ToDoPage.jsx";
-import LoagingPage from "./pages/LoadingPage/LoagingPage.jsx";
-import {
-  collection,
-  addDoc,
-  doc,
-  updateDoc,
-  deleteDoc,
-  onSnapshot,
-  query,
-  orderBy,
-  setDoc,
-} from "firebase/firestore";
 
 export default () => {
   const router = createBrowserRouter(
@@ -26,25 +13,17 @@ export default () => {
         element: <MainPage />,
         errorElement: <NotFoundPage />,
         children: [
-          { index: true, element: <ToDoPage /> },
+          { index: true, element: <LoginPage /> },
           {
             path: "register",
             element: <RegisterPage />,
-          },
-          {
-            path: "login",
-            element: <LoginPage />,
           },
         ],
       },
     ],
     {
-      basename: "/Frontend/ToDo",
+      basename: "/Frontend/Login",
     },
   );
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };

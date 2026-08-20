@@ -1,0 +1,32 @@
+.not-found-wrapper{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found{
+  background-color: var(--item-bg);
+  padding-inline: 10rem;
+  padding-block: 10rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 6px solid var(--text-primary);
+}
+
+.not-found h1{
+  color: var(--text-primary);
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+.not-found a {
+  border: 4px solid var(--text-secondary);
+  color: var(--text-secondary);
+  border-radius: 1rem;
+  background-color: var(--text-primary-super-light);
+}

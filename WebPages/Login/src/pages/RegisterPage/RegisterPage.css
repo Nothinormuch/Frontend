@@ -1,0 +1,69 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.register-page .register-container {
+  background-color: var(--item-bg);
+  padding-inline: 10rem;
+  padding-block: 5rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.register-page .register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-page .register-container fieldset {
+  background-color: var(--input-bg);
+  padding-block-end: 0.8rem;
+  padding-block-start: 0.3rem;
+  padding-inline: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.2s ease-out;
+}
+
+.register-page .register-container fieldset:focus-within {
+  color: var(--text-secondary);
+  border: 2px solid var(--text-secondary);
+  transition: all 0.2s ease-in;
+}
+
+.register-page .register-container fieldset input {
+  outline: none;
+  border: none;
+  background-color: var(--input-bg);
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in;
+}
+.register-page .register-container fieldset input::placeholder {
+  transition: all 0.2s ease-in;
+}
+.register-page .register-container fieldset input:focus::placeholder {
+  transition: all 0.2s ease-out;
+  color: var(--input-bg);
+}
+
+.register-page .register-container button {
+  margin-block-start: 1.5rem;
+  background-color: var(--text-secondary);
+  outline: none;
+  border: 1px solid var(--text-secondary-dark);
+  border-radius: 1rem;
+  padding-block: 1rem;
+  color: var(--text-secondary-dark);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.register-page .register-container button:hover {
+  background-color: var(--text-secondary-active);
+  cursor: pointer;
+}

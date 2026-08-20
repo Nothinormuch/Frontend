@@ -1,0 +1,54 @@
+.to-do-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 100rem;
+}
+.to-do-container {
+}
+.to-do-container form {
+}
+.to-do-container input {
+  outline: none;
+  border: none;
+  margin-block-start: 5rem;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  background-color: var(--input-bg);
+  border: 2px solid var(--border);
+}
+.to-do-container button {
+  margin-inline-start: 1rem;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border: 2px solid var(--border);
+}
+.to-do-list {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 1rem;
+  padding-inline: 5rem;
+  padding-block: 3rem;
+  background-color: var(--item-bg);
+  border-radius: 2rem;
+  width: 100%;
+  border: 2px solid var(--border);
+}
+.to-do-list button{
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20rem;
+  font-size: 1.5rem;
+}
+
+.completed {
+  text-decoration: line-through;
+}
