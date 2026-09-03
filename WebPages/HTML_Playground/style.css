@@ -1,3 +1,10 @@
+/* ============================================================
+   Fluid, responsive stylesheet
+   Every layout property is either fluid (clamp / percentages /
+   auto-fit / flex-wrap) or transitioned, so the page reflows
+   continuously instead of snapping at media-query breakpoints.
+   ============================================================ */
+
 :root {
   --bg-dark: hsl(220 100% 93%);
   --bg: hsl(220 100% 98%);
@@ -14,6 +21,12 @@
   --warning: hsl(52 82% 24%);
   --success: hsl(154 58% 29%);
   --info: hsl(217 42% 43%);
+
+  /* Fluid layout tokens: gutter grows 0.75rem -> 2rem across
+     360px - 1600px viewports, so spacing never jumps. */
+  --fluid-gutter: clamp(0.75rem, 0.35rem + 2.2vw, 2rem);
+  /* Section gaps: 0.6rem on phones -> 2.5rem on desktops. */
+  --fluid-gap: clamp(0.6rem, 0.15rem + 2.5vw, 2.5rem);
 }
 
 * {
@@ -22,10 +35,32 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Global scrolling behaviour + smooth anchor scrolling. */
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   background-color: var(--bg-dark);
   color: var(--text);
+  /* Fluid base type: 15.5px phones -> 18px desktops. All the
+     rem-based sizing below inherits this, so the WHOLE page
+     (nav, tables, forms) scales smoothly with viewport width. */
+  font-size: clamp(0.97rem, 0.9rem + 0.35vw, 1.125rem);
+  line-height: 1.55;
+  /* Nothing wider than the viewport -> no horizontal scrolling. */
+  overflow-x: clip;
+}
+
+/* Any replaced element can never overflow its container. */
+img,
+video,
+iframe,
+embed,
+object,
+audio {
+  max-width: 100%;
 }
 
 .icon {
@@ -39,6 +74,7 @@ body {
 
 .pfp {
   max-height: 8rem;
+  max-width: 100%;
 }
 
 footer {
@@ -46,7 +82,7 @@ footer {
   bottom: 0;
   background-color: var(--primary);
   width: 100%;
-  padding: 1rem;
+  padding: 1rem var(--fluid-gutter);
   text-align: center;
   align-items: center;
 }
@@ -67,15 +103,18 @@ th {
   padding: 0.5rem;
 }
 
-#contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* The ID-card table shrinks naturally; long words wrap instead
+   of forcing horizontal scroll on narrow screens. */
+table {
+  max-width: 100%;
 }
 
-#contact #social {
-  text-align: right;
+table td,
+table th {
+  overflow-wrap: anywhere;
 }
+
+/* ==================== navigation ==================== */
 
 header {
   display: block;
@@ -92,47 +131,40 @@ nav {
 nav ul {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;          /* links flow onto extra rows continuously */
   list-style: none;
   justify-content: flex-end;
+  padding-inline: clamp(0.25rem, 1.5vw, 1rem);
 }
 
 nav ul li {
-  padding-block: 1rem;
-  padding-inline: 1rem;
+  /* Fluid padding: links shrink and grow smoothly with viewport. */
+  padding-block: clamp(0.5rem, 0.3rem + 1vw, 1rem);
+  padding-inline: clamp(0.35rem, 0.1rem + 1.4vw, 1rem);
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 nav ul li:first-child {
-  margin-inline-end: auto;
+  margin-inline-end: auto;   /* brand link pushes menu right */
+  font-weight: 600;
 }
 
 nav ul li a {
   color: black;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-nav ul li:hover{
+nav ul li:hover {
   background-color: var(--primary-muted);
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.5s;
 }
+
+/* ==================== generic layout ==================== */
 
 section {
-  margin-block: 2rem;
-  margin-inline: 2rem;
-}
-
-video {
-  width: 16rem;
-  height: 9rem;
-}
-
-.japanese-text {
-  writing-mode: vertical-rl;
-}
-
-.japanese-list li {
-  display: inline-block;
-  writing-mode: vertical-rl;
+  margin-block: var(--fluid-gap);
+  margin-inline: var(--fluid-gutter);
 }
 
 h1 {
@@ -147,13 +179,53 @@ h3 {
   margin-block-end: 0.75rem;
 }
 
+h2,
+h3 {
+  text-align: center;
+}
+
 #about-me-heading {
   display: inline;
 }
 
 mark {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
+
+hr {
+  /* section rules use the fluid gutter too */
+  margin-inline: var(--fluid-gutter);
+}
+
+/* ==================== banner (heading + ID card) ==================== */
+
+/* auto-fit grid: on wide screens the heading and the ID card share
+   the row 50/50 (the old 40% + dead-centre void looked identical,
+   since both sections are transparent); as the viewport narrows the
+   cards shrink continuously and the ID card wraps BELOW the heading
+   once its minimum comfortable width no longer fits -- no breakpoint
+   flip at all. */
+#banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: var(--fluid-gap);
+  align-items: center;
+  margin-block: 1rem;
+  margin-inline: var(--fluid-gutter);
+}
+
+#banner > #heading,
+#banner > #profile {
+  margin: 0;
+  min-width: 0;
+}
+
+#banner > #profile {
+  display: flex;
+  justify-content: end;
+}
+
+/* ==================== survey form ==================== */
 
 fieldset {
   padding-block: 1rem;
@@ -162,7 +234,9 @@ fieldset {
   margin-inline: 1rem;
   border-radius: 1rem;
 }
-input,textarea {
+
+input,
+textarea {
   background-color: var(--bg);
   color: var(--text-muted);
   padding-inline: 0.5rem;
@@ -171,124 +245,279 @@ input,textarea {
   border-radius: 0.4rem;
   margin-block: 0.5rem;
   margin-inline-end: 1rem;
-  outline:none;
+  outline: none;
   accent-color: var(--primary);
-}
-textarea {
-    padding-block: 0.5rem;
 }
 
 input::placeholder {
   color: var(--text-muted);
 }
 
-select{
-    color: var(--text);
-    background-color: var(--bg);
-    outline:none;
-    border-radius: 0.3rem;
-    border: 1px solid var(--border-muted);
-    padding-inline:0.5rem;
-    padding-block:0.2rem;
-    color: var(--text);
+select {
+  color: var(--text);
+  background-color: var(--bg);
+  outline: none;
+  border-radius: 0.3rem;
+  border: 1px solid var(--border-muted);
+  padding-inline: 0.5rem;
+  padding-block: 0.2rem;
 }
-option{
-    color: var(--text);
+
+option {
+  color: var(--text);
 }
-legend{
-    color: var(--text-muted);
+
+legend {
+  color: var(--text-muted);
+  text-align: center;
+  font-weight: bold;
 }
+
 label {
   margin-block: 0.5rem;
 }
-#banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-block: 1rem;
-  margin-inline: 1rem;
+
+form {
+  /* auto-fit grid: the two fieldset columns shrink continuously,
+     then the second column wraps below the first as soon as the
+     minimum comfortable width is reached -- smoothly, column by
+     column, with no single breakpoint jump. The max-width also
+     caps the track count at 2 so the full-row spans stay correct
+     on ultra-wide displays. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+form #rate {
+  grid-column: 1 / -1;
+}
+
+#desc {
+  display: block;
+}
+
+/* Fluid input widths: usable on phones, generous on desktops. */
+#desc input {
+  width: min(100%, 22rem);
+}
+
+#desc input[type="date"],
+#desc input[type="color"],
+input[type="checkbox"] {
+  width: auto;
+  min-width: 0;
+}
+
+textarea {
+  padding-block: 0.5rem;
+  width: 100%;
+  max-width: 40rem;
+  min-height: 6rem;
+  resize: vertical;
 }
 
 #submit-button {
   font-size: 1rem;
   display: block;
   margin-inline: auto;
-  padding: 0.5rem;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  padding: 0.5rem clamp(1rem, 2vw, 1.75rem);
+  grid-column: 1 / -1;
   background-color: var(--primary);
   color: var(--text);
 }
-#submit-button:hover{
+
+#submit-button:hover {
   background-color: var(--primary-muted);
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
   transition: background-color 0.5s;
 }
 
-h2,
-h3 {
-  text-align: center;
-}
+/* ==================== media section ==================== */
 
-form {
+#media {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--fluid-gap);
+  align-items: center;
 }
 
-form #rate {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-legend {
-  text-align: center;
-  font-weight: bold;
-}
-textarea {
-  width: 80%;
-  height: 30%;
-}
-#desc input {
-  width: 25%;
-}
-#desc {
-  display: block;
-}
 audio {
   display: block;
   margin-block: 1rem;
   margin-inline: auto;
+  width: min(100%, 24rem);
 }
-#media {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 video {
-  width: 60vw;
+  width: 100%;
   height: auto;
-}
-#pdf {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#pdf iframe,
-#pdf embed,
-#pdf object {
-  width: 30vw;
-  height: 50vh;
-}
-#site {
   display: block;
   margin-inline: auto;
 }
-#code {
-  margin-block-start: 2rem;
-  position: relative;
-  min-height: 8rem;
+
+/* ==================== pdf section ==================== */
+
+#pdf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--fluid-gap);
+  align-items: center;
 }
+
+#pdf iframe,
+#pdf embed,
+#pdf object {
+  width: 100%;
+  height: 50vh;
+  border: 0;
+}
+
+#site {
+  display: block;
+  margin-inline: auto;
+  width: min(100%, 64rem);
+  height: 60vh;
+  border: 0;
+}
+
+/* ==================== code block ==================== */
+
+#code {
+  margin-block-start: var(--fluid-gap);
+  margin-inline: var(--fluid-gutter);
+  display: grid;
+  justify-items: center;   /* replaces the old absolute positioning,
+                              which overflowed on narrow screens */
+}
+
 pre {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
+  margin: 0;
+  width: 100%;
+  max-width: 34rem;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-muted);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre-wrap;   /* code wraps on phones instead of scrolling */
+  overflow-wrap: anywhere;
+}
+
+/* ==================== anime list ==================== */
+
+.japanese-text {
+  writing-mode: vertical-rl;
+}
+
+.japanese-list {
+  display: flex;
+  flex-wrap: wrap;         /* vertical-text items wrap continuously */
+  justify-content: center;
+  gap: clamp(0.25rem, 0.1rem + 1vw, 1rem);
+}
+
+.japanese-list li {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  padding-block: 0.25rem;
+}
+
+/* ==================== contact ==================== */
+
+#contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--fluid-gap);
+  align-items: center;
+}
+
+#contact #social {
+  text-align: right;
+}
+
+#social .icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+#social a:hover .icon {
+  transform: scale(1.15);
+}
+
+/* ============================================================
+   Narrow-screen refinements. These only tweak details (not
+   structure), so layouts still reflow continuously; the stacked
+   menu animates via flex-basis instead of appearing abruptly.
+   ============================================================ */
+
+@media (max-width: 900px) {
+  /* Anchor targets clear the sticky header when navigating. */
+  section,
+  #code,
+  #media {
+    scroll-margin-top: 6rem;
+  }
+
+  #contact #social {
+    text-align: center;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Brand row on its own line, menu centred underneath. */
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+    margin-inline-end: 0;
+    padding-block: 0.75rem 0.25rem;
+    transition: flex-basis 0.4s ease, background-color 0.4s ease;
+  }
+
+  section,
+  #code,
+  #media {
+    scroll-margin-top: 8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Fully stacked one-item-per-row menu, still animated. */
+  nav ul li {
+    flex-basis: 100%;
+    text-align: center;
+    padding-block: 0.6rem;
+    transition: flex-basis 0.4s ease, padding 0.4s ease,
+      background-color 0.4s ease;
+  }
+
+  nav ul li:first-child {
+    padding-block: 0.75rem 0.25rem;
+  }
+
+  #banner > #profile {
+    justify-content: center;
+  }
+
+  fieldset {
+    margin-inline: 0;
+    padding-inline: 0.75rem;
+  }
+
+  #desc input {
+    width: 100%;
+    max-width: none;
+    margin-inline-end: 0;
+  }
+
+  #pdf iframe,
+  #pdf embed,
+  #pdf object {
+    height: 42vh;
+  }
 }
